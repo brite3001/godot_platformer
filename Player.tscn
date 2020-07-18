@@ -1,0 +1,58 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://assets/idle/idle1.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/run/run2.png" type="Texture" id=3]
+[ext_resource path="res://assets/jump/jump2.png" type="Texture" id=4]
+[ext_resource path="res://assets/jump/jump4.png" type="Texture" id=5]
+[ext_resource path="res://assets/run/run3.png" type="Texture" id=6]
+[ext_resource path="res://assets/run/run6.png" type="Texture" id=7]
+[ext_resource path="res://assets/jump/jump6.png" type="Texture" id=8]
+[ext_resource path="res://assets/jump/jump5.png" type="Texture" id=9]
+[ext_resource path="res://assets/idle/idle4.png" type="Texture" id=10]
+[ext_resource path="res://assets/idle/idle3.png" type="Texture" id=11]
+[ext_resource path="res://assets/idle/idle2.png" type="Texture" id=12]
+[ext_resource path="res://assets/jump/jump3.png" type="Texture" id=13]
+[ext_resource path="res://assets/run/run5.png" type="Texture" id=14]
+[ext_resource path="res://assets/run/run4.png" type="Texture" id=15]
+[ext_resource path="res://assets/jump/jump1.png" type="Texture" id=16]
+[ext_resource path="res://assets/run/run1.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 4 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 9.91452, 17.1148 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 32.2309, -3.8147e-06 )

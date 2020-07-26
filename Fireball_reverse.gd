@@ -5,7 +5,7 @@ var velocity = Vector2()
 
 func _physics_process(delta):
 	# Move and slide uses delta automatically, but here we keep it simple as we're only moving horizontally
-	velocity.x = SPEED * delta * 1
+	velocity.x = SPEED * delta * -1
 	translate(velocity)
 	$AnimatedSprite.play("shoot")
 

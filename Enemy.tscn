@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/Enemy/walk/walk0.png" type="Texture" id=1]
 [ext_resource path="res://assets/Enemy/walk/walk5.png" type="Texture" id=2]
@@ -7,9 +7,20 @@
 [ext_resource path="res://assets/Enemy/walk/walk3.png" type="Texture" id=5]
 [ext_resource path="res://assets/Enemy/walk/walk2.png" type="Texture" id=6]
 [ext_resource path="res://Enemy.gd" type="Script" id=7]
+[ext_resource path="res://assets/Enemy/dead/dead1.png" type="Texture" id=8]
+[ext_resource path="res://assets/Enemy/dead/dead4.png" type="Texture" id=9]
+[ext_resource path="res://assets/Enemy/dead/dead0.png" type="Texture" id=10]
+[ext_resource path="res://assets/Enemy/dead/dead5.png" type="Texture" id=11]
+[ext_resource path="res://assets/Enemy/dead/dead2.png" type="Texture" id=12]
+[ext_resource path="res://assets/Enemy/dead/dead3.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 11 ) ],
+"loop": false,
+"name": "dead",
+"speed": 12.0
+}, {
 "frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "walk",
@@ -20,7 +31,7 @@ animations = [ {
 extents = Vector2( 11.7315, 18.0845 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-position = Vector2( -0.15749, -0.236233 )
+position = Vector2( 0.0192871, -1.12012 )
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
@@ -28,7 +39,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "walk"
+animation = "dead"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.314983, -0.0787468 )
